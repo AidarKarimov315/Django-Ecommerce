@@ -1,33 +1,9 @@
-<div align="center">
-
-# Habaneras de Lino
-
-![Habaneras de Lino Logo](.github_images/Habaneras_de_Lino_Logo.png)
-
-![Python version](https://img.shields.io/badge/Python-3.8.10-4c566a?logo=python&&longCache=true&logoColor=white&colorB=pink&style=flat-square&colorA=4c566a) ![Django version](https://img.shields.io/badge/Django-4.0.6-4c566a?logo=django&&longCache=truelogoColor=white&colorB=pink&style=flat-square&colorA=4c566a) ![Django-RestFramework](https://img.shields.io/badge/Django_Rest_Framework-3.13.1-red.svg?longCache=true&style=flat-square&logo=django&logoColor=white&colorA=4c566a&colorB=pink) ![Commit activity](https://img.shields.io/github/commit-activity/y/Ceci-Aguilera/habaneras-de-lino-drf-api/master?&&longCache=true&logoColor=white&colorB=green&style=flat-square&colorA=4c566a) ![Last Commit](https://img.shields.io/github/last-commit/Ceci-Aguilera/habaneras-de-lino-drf-api/master?&&longCache=true&logoColor=white&colorB=green&style=flat-square&colorA=4c566a)
-
-</div>
-
-## Table of Contents
-* [Description](#intro)
-  * [What is __Habaneras de Lino__ ?](#habaneras)
-  * [ Tech stack and components](#stack)
-* [Installation](#install)
-  * [Install (Run) with Docker](#docker_install), or
-  * [Installation without Docker](#no_docker_install)
-* [Deploy on VPS](#deploy)
-* [Screenshots of the Frontend Next js App](#screenshots_frontend)
-* [Screenshots of the Django Backend Admin Store](#screenshots)
-* [Useful Links](#useful_links)
-
-
-<a name="intro"></a>
 ## Description
 
 Visit the new version of the store at [habanerasdelino.com](https://habanerasdelino.com)
 
 <a name="habaneras"></a>
-### What is Habaneras de Lino?
+### What is this project?
 
 __Habaneras de Lino__ is an online store to buy linen and cotton clothes that offer an experience of comfort, luxury ,and modernity. The clients can filter the clothing by category, collection, and other characteristics, as well as customize the products (set color, size, sleeve cut, ...). It uses Stripe for managing the payments.
 
@@ -39,7 +15,7 @@ The main components of __Habaneras de Lino__ are:
   - __API(store_app folder):__  For managing user requests such as making CRUD operations over the store __Cart__ and making payments and orders. The code for this API can be found inside the __store_app__ folder of this repo.
   - __The store administration (admin_app folder):__ Intended to be used by the store administrator. It is different from Django's Admin, and it allows advanced filtering and CRUD operations over products, collections, configs, orders, payments, ... .
 - __Stripe SDK (Third Party):__ For managing payments. It is accessed by Django when the user makes a purchase. [Link to Stripe](https://stripe.com).
-- __Next.js and React.js store Frontend ([GitHub repo](https://github.com/Ceci-Aguilera/habaneras-de-lino-frontend-v2)):__ The store UI that is visible to the clients was created using Next.js which connects to the Django API when making API calls and to Cloudinary when fetching the products', collections', and categories' images.
+- __Next.js and React.js store Frontend :__ The store UI that is visible to the clients was created using Next.js which connects to the Django API when making API calls and to Cloudinary when fetching the products', collections', and categories' images.
 - __Cloudinary for storing images and as CDN (Third Party):__ Used for storing all images uploaded using the Django custom store administration. The images can be seen at the store's admin and in the store frontend by clients. [Link to Cloudinary](https://cloudinary.com).
 - __PostgreSQL as database (Third Party):__ Connected to the Django API. Contains all the information about the store administration.
 
@@ -67,12 +43,12 @@ There are currently 3 services in use: the api (Django App), the db (the postgre
 
 1. Clone the repo:
     ```bash
-    git clone https://github.com/Ceci-Aguilera/habaneras-de-lino-drf-api.git
+    git clone https://github.com/AidarKarimov315/Django-Ecommerce.git
     ```
 1. Configure the environment variables.
-    1. Copy the content of the example env file that is inside the habaneras_de_lino_drf_api folder into a .env file:
+    1. Copy the content of the example env file that is inside the DRF_API folder into a .env file:
         ```bash
-        cd habaneras_de_lino_drf_api/settings
+        cd DRF_API/settings
         cp simple_env_conf.env .env
         ```
     1. The new .env file should contain all the environment variables necessary to run all the django app in all the environments. However, the only needed variables for docker to run are the following:
@@ -119,13 +95,13 @@ There are currently 3 services in use: the api (Django App), the db (the postgre
 
 1. Clone the repo:
     ```bash
-    git clone https://github.com/Ceci-Aguilera/habaneras_de_lino_api.git
+    git clone https://github.com/AidarKarimov315/Django-Ecommerce.git
     ```
 1. Configure a virtual env and set up the database. See [Link for configuring Virtual Environment](https://docs.python-guide.org/dev/virtualenvs/) and [Link for Database setup](https://www.digitalocean.com/community/tutorials/how-to-set-up-django-with-postgres-nginx-and-gunicorn-on-ubuntu-16-04).
 1. Configure the environment variables.
-    1. Copy the content of the example env file that is inside the habaneras_de_lino_drf_api folder into a .env file:
+    1. Copy the content of the example env file that is inside the DRF_API folder into a .env file:
         ```bash
-        cd habaneras_de_lino_drf_api/settings
+        cd DRF_API/settings
         cp simple_env_conf.env .env
         ```
     1. The new .env file should contain all the environment variables necessary to run all the django app in all the environments. However, the only needed variables for the development environment to run are the following:
@@ -167,7 +143,7 @@ There are currently 3 services in use: the api (Django App), the db (the postgre
 ## Deploy on VPS
 1. Clone the repo:
     ```bash
-    git clone https://github.com/Ceci-Aguilera/habaneras-de-lino-drf-api.git
+    git clone https://github.com/AidarKarimov315/Django-Ecommerce.git
     ```
 1. Install the dependencies:
     ```bash
@@ -196,38 +172,3 @@ There are currently 3 services in use: the api (Django App), the db (the postgre
     ```
 1. Complete the setup of the website with this [Link](https://www.digitalocean.com/community/tutorials/how-to-set-up-django-with-postgres-nginx-and-gunicorn-on-ubuntu-16-04)
 1. Configure the CORS to allow the Frontend to make api calls. See [Link](https://www.stackhawk.com/blog/django-cors-guide/)
-
-<a name="screenshots_frontend"></a>
-## Screenshots of the Frontend
-
-Should be updated soon
-
-<a name="screenshots"></a>
-## Screenshots of the custom Admin
-
-Should be updated soon
-
-
-<a name="useful_links"></a>
-## Useful Links
-### Postgresql Databse
-- Setup Database: [Digital Ocean Link for Django Deployment on VPS](https://www.digitalocean.com/community/tutorials/how-to-set-up-django-with-postgres-nginx-and-gunicorn-on-ubuntu-16-04)
-### Docker
-- [Docker Oficial Documentation](https://docs.docker.com/)
-- Dockerizing Django, PostgreSQL, guinicorn, and Nginx:
-    - Github repo of sunilale0: [Link](https://github.com/sunilale0/django-postgresql-gunicorn-nginx-dockerized/blob/master/README.md#nginx)
-    - My repo to Dockerize Django + Postgresql + Nginx + React js: [Ceci-Aguilera/django-react-nginx-mysql-docker](https://github.com/Ceci-Aguilera/django-react-nginx-mysql-docker)
-    - Michael Herman article on testdriven.io: [Link](https://testdriven.io/blog/dockerizing-django-with-postgres-gunicorn-and-nginx/)
-### Django and DRF
-- [Django Official Documentation](https://docs.djangoproject.com/en/4.0/)
-- Generate a new secret key: [Stackoverflow Link](https://stackoverflow.com/questions/41298963/is-there-a-function-for-generating-settings-secret-key-in-django)
-- Modify the Django Admin:
-    - Small modifications (add searching, columns, ...): [Link](https://realpython.com/customize-django-admin-python/)
-    - Modify Templates and css: [Link from Medium](https://medium.com/@brianmayrose/django-step-9-180d04a4152c)
-- [Django Rest Framework Official Documentation](https://www.django-rest-framework.org/)
-- More about Nested Serializers: [Stackoverflow Link](https://stackoverflow.com/questions/51182823/django-rest-framework-nested-serializers)
-- More about GenericViews: [Testdriver.io Link](https://testdriven.io/blog/drf-views-part-2/)
-### Miscellaneous
-- Create Virual Environment with Virtualenv and Virtualenvwrapper: [Link](https://docs.python-guide.org/dev/virtualenvs/)
-- [Configure CORS](https://www.stackhawk.com/blog/django-cors-guide/)
-- [Setup Django with Cloudinary](https://cloudinary.com/documentation/django_integration)
